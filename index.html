@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Signal Nine — time, without a screen</title>
+<meta name="description" content="A sample product launch page for a screenless desk clock: scroll story, specs and preorder. Fictional hardware, built as a portfolio template by JayOd Studios.">
+<meta name="theme-color" content="#08090a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23c8ff4d'/%3E%3Ctext x='16' y='23' font-family='system-ui' font-size='17' font-weight='800' text-anchor='middle' fill='%2308090a'%3E9%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="nav-row">
+    <a class="logo" href="#top" aria-label="Signal Nine home">
+      <span class="logo-dot" aria-hidden="true"></span>
+      <span>Signal Nine</span>
+    </a>
+
+    <nav id="siteNav" aria-label="Product">
+      <a href="#overview">Overview</a>
+      <a href="#features">Design</a>
+      <a href="#specs">Specs</a>
+      <a href="#order">Preorder</a>
+    </nav>
+
+    <a class="pill" href="#order">Preorder — $180</a>
+
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="siteNav">
+      <span class="bars" aria-hidden="true"></span><span class="sr">Open menu</span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top" aria-labelledby="heroTitle">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="live" aria-hidden="true"></span> The desk companion</p>
+      <h1 id="heroTitle">Time,<br>without<br><em>a screen.</em></h1>
+      <p class="lede">A machined aluminium dial, one hand, and nothing to check. Signal Nine keeps time quietly on your desk and asks nothing of you — no account, no app, no notifications.</p>
+      <div class="cta-row">
+        <a class="solid" href="#order">Preorder — $180</a>
+        <a class="quiet" href="#features">See how it works <span aria-hidden="true">↓</span></a>
+      </div>
+      <dl class="hero-stats">
+        <div><dt>Battery</dt><dd>72 hours</dd></div>
+        <div><dt>Body</dt><dd>380 g aluminium</dd></div>
+        <div><dt>Sync</dt><dd>Silent, passive</dd></div>
+      </dl>
+    </div>
+
+    <div class="hero-device">
+      <div class="device-glow" aria-hidden="true"></div>
+      <svg class="device" viewBox="0 0 360 440" role="img" aria-label="A drawn Signal Nine desk clock: a round aluminium dial with a single lime-tipped hand, on a small stand.">
+        <defs>
+          <linearGradient id="body" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#3b4046"/>
+            <stop offset="0.5" stop-color="#22262a"/>
+            <stop offset="1" stop-color="#111417"/>
+          </linearGradient>
+          <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#b9c1c8"/>
+            <stop offset="0.45" stop-color="#6d767e"/>
+            <stop offset="0.7" stop-color="#e8edf0"/>
+            <stop offset="1" stop-color="#7d868d"/>
+          </linearGradient>
+          <radialGradient id="face" cx="0.38" cy="0.3" r="0.85">
+            <stop offset="0" stop-color="#1b2024"/>
+            <stop offset="1" stop-color="#0b0e10"/>
+          </radialGradient>
+        </defs>
+
+        <ellipse cx="180" cy="398" rx="112" ry="16" fill="#000" opacity="0.5"/>
+        <rect x="150" y="330" width="60" height="58" rx="10" fill="url(#body)" stroke="#31373c"/>
+        <circle cx="180" cy="196" r="140" fill="url(#rim)"/>
+        <circle cx="180" cy="196" r="132" fill="url(#body)"/>
+        <circle cx="180" cy="196" r="112" fill="url(#face)"/>
+        <circle cx="180" cy="196" r="112" fill="none" stroke="#2b3136" stroke-width="1"/>
+
+        <g id="ticks" stroke="#586168" stroke-width="1.4" stroke-linecap="round"></g>
+        <g id="hourTicks" stroke="#8d979e" stroke-width="2.4" stroke-linecap="round"></g>
+
+        <g id="hourHand" stroke="#e9edef" stroke-width="5" stroke-linecap="round">
+          <line x1="180" y1="196" x2="180" y2="126"/>
+        </g>
+        <g id="minuteHand" stroke="#c8ff4d" stroke-width="2.4" stroke-linecap="round">
+          <line x1="180" y1="196" x2="180" y2="100"/>
+        </g>
+        <circle cx="180" cy="196" r="5" fill="#0b0e10" stroke="#c8ff4d" stroke-width="2"/>
+        <text x="180" y="252" text-anchor="middle" class="dial-brand" font-size="11" letter-spacing="3" fill="#5f686e">SIGNAL NINE</text>
+        <text x="180" y="276" text-anchor="middle" id="digital" font-size="10" letter-spacing="1.5" fill="#848d93">09:41</text>
+      </svg>
+      <p class="device-note">Shown at 1:1 · anodised graphite</p>
+    </div>
+  </section>
+
+  <div class="press" aria-label="Press mentions">
+    <span>Off-Grid</span>
+    <span>Field Journal</span>
+    <span>Signal Post</span>
+    <span>Desk Quarterly</span>
+    <span>Monocle Works</span>
+  </div>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>72-hour battery</span><i></i><span>No app</span><i></i><span>Machined in one piece</span><i></i><span>Silent sync</span><i></i>
+      <span>72-hour battery</span><i></i><span>No app</span><i></i><span>Machined in one piece</span><i></i><span>Silent sync</span><i></i>
+    </div>
+  </div>
+
+  <section class="overview" id="overview" aria-labelledby="overviewTitle">
+    <p class="eyebrow">01 — The idea</p>
+    <h2 id="overviewTitle">A clock should tell the time, then get out of the way.</h2>
+    <div class="overview-grid">
+      <p>Most desk objects are competing for attention. Signal Nine was designed around the opposite brief: be accurate, be quiet, and be worth looking at twice a day.</p>
+      <p>One hand moves once a minute. There is no screen to glow at night, no firmware to update, and no companion app to abandon in eighteen months.</p>
+    </div>
+  </section>
+
+  <section class="features" id="features" aria-labelledby="featuresTitle">
+    <div class="feature-head">
+      <p class="eyebrow">02 — The design</p>
+      <h2 id="featuresTitle">Three decisions, kept.</h2>
+    </div>
+
+    <div class="feature-grid">
+      <article>
+        <p class="num" aria-hidden="true">01</p>
+        <div class="feature-art art-dial" aria-hidden="true"></div>
+        <h3>One hand</h3>
+        <p>An hour hand, a minute track, and a lime tip you can read from across the room. Reading it takes a second, which is the point.</p>
+      </article>
+      <article>
+        <p class="num" aria-hidden="true">02</p>
+        <div class="feature-art art-body" aria-hidden="true"></div>
+        <h3>One piece of metal</h3>
+        <p>Milled from a single block of 6061 aluminium, bead-blasted and anodised. No seams, no plastic, no sticker pretending to be a badge.</p>
+      </article>
+      <article>
+        <p class="num" aria-hidden="true">03</p>
+        <div class="feature-art art-night" aria-hidden="true"></div>
+        <h3>Nothing at night</h3>
+        <p>The dial goes dark. There is no standby light, no charging LED and no screen dimming to a glow at 2am.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="inwild" aria-labelledby="wildTitle">
+    <div class="inwild-head">
+      <p class="eyebrow">03 — In the wild</p>
+      <h2 id="wildTitle">Desks, shelves, studios.</h2>
+    </div>
+    <div class="plates">
+      <figure><div class="plate plate-a" role="img" aria-label="A drawn desk at dawn: warm light, a notebook and the clock."></div><figcaption>Studio, 7am</figcaption></figure>
+      <figure><div class="plate plate-b" role="img" aria-label="A drawn dark shelf with the clock lit by one lamp."></div><figcaption>Shelf, evening</figcaption></figure>
+      <figure><div class="plate plate-c" role="img" aria-label="A drawn workbench with tools and the clock at the edge."></div><figcaption>Workshop, midday</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="specs" id="specs" aria-labelledby="specsTitle">
+    <div class="specs-copy">
+      <p class="eyebrow">04 — Specifications</p>
+      <h2 id="specsTitle">Everything, measured.</h2>
+      <p class="muted">Shipped in a paper moulded tray. Two screws, one hex key, and a card with the name of the person who assembled it.</p>
+    </div>
+    <dl class="spec-list">
+      <div><dt>Dimensions</dt><dd>92 × 92 × 38 mm</dd></div>
+      <div><dt>Weight</dt><dd>380 g</dd></div>
+      <div><dt>Body</dt><dd>6061 aluminium, bead-blasted, anodised</dd></div>
+      <div><dt>Battery</dt><dd>72 hours · USB-C, 90-minute charge</dd></div>
+      <div><dt>Movement</dt><dd>Swiss quartz, ±10 seconds a month</dd></div>
+      <div><dt>Sync</dt><dd>Passive radio time signal — no account, no app</dd></div>
+      <div><dt>In the box</dt><dd>Clock, stand, USB-C cable, hex key, card</dd></div>
+      <div><dt>Price</dt><dd>$180 · ships March 2027</dd></div>
+    </dl>
+  </section>
+
+  <section class="order" id="order" aria-labelledby="orderTitle">
+    <div class="order-copy">
+      <p class="eyebrow">05 — Preorder</p>
+      <h2 id="orderTitle">Reserve one from the first run.</h2>
+      <p>The first run is 500 pieces. Reservations are free to cancel until the day it ships, and we will only email you twice: once to confirm, once when it leaves the workshop.</p>
+      <ul class="order-notes" role="list">
+        <li>March 2027 shipping</li>
+        <li>Free cancellation</li>
+        <li>Two-year warranty</li>
+      </ul>
+    </div>
+
+    <form class="order-form" id="orderForm" novalidate>
+      <label for="email">Email address</label>
+      <div class="field">
+        <input id="email" type="email" autocomplete="email" placeholder="you@example.com" required aria-describedby="emailError">
+        <button class="solid" type="submit">Reserve</button>
+      </div>
+      <p class="error" id="emailError" role="alert"></p>
+      <p class="fine">A sample form — nothing is sent, stored or charged.</p>
+    </form>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-top">
+    <p class="footer-logo"><span class="logo-dot" aria-hidden="true"></span> Signal Nine</p>
+    <nav aria-label="Footer">
+      <a href="#overview">Overview</a>
+      <a href="#features">Design</a>
+      <a href="#specs">Specs</a>
+      <a href="#order">Preorder</a>
+    </nav>
+  </div>
+  <p class="legal">Sample project — Signal Nine is fictional hardware. A portfolio template by JayOd Studios. No orders, payments or emails are processed.</p>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
