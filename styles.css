@@ -607,3 +607,23 @@ main { padding-top: 74px; }
   .marquee-track { animation: none; }
   *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
 }
+
+/* Back to the template gallery. Fixed so it stays reachable at any scroll depth. */
+.back-gallery {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 20;
+  padding: 9px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(8, 9, 10, 0.84);
+  color: var(--text);
+  font: 600 11px/1 var(--mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  backdrop-filter: blur(6px);
+}
+.back-gallery:hover { border-color: var(--lime); color: var(--lime); }
+.back-gallery:focus-visible { outline: 2px solid var(--lime); outline-offset: 3px; }
