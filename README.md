@@ -1,7 +1,7 @@
 # Signal Nine — sample product launch page
 
 A self-contained sample launch site for a screenless desk clock: oversized type,
-a photographed brass device, a press row, a scrolling spec band, three design
+an interactive 3D brass watch, a press row, a scrolling spec band, three design
 features, a real spec table and a preorder form. It is a **portfolio template** —
 the hardware is fictional and no order or email is processed.
 
@@ -26,7 +26,7 @@ the hardware is fictional and no order or email is processed.
 ### Screen inventory
 
 1. **Fixed nav** — wordmark, section links, lime preorder pill, solid on scroll.
-2. **Hero** — huge three-line headline, product explanation, two CTAs, three hero stats, photographed brass clock.
+2. **Hero** — huge three-line headline, product explanation, two CTAs, three hero stats, and a full-bleed interactive brass watch set to the visitor's local timezone.
 3. **Press row** — fictional publications, text only, no fake logos.
 4. **Spec band** — scrolling marquee of four promises; pauses on hover and stops under reduced motion.
 5. **The idea** — two-column rationale.
@@ -51,24 +51,27 @@ does not pretend to take money.
 
 ## Motion
 
-The motion layer is dependency-free. The hero product photograph tilts toward
-the pointer, a lime time rail tracks scroll progress, the nav marks the section
-in view, and sections reveal as they enter the viewport. Everything is skipped
-under `prefers-reduced-motion`.
+The motion layer is dependency-free. The CSS 3D watch tilts toward the pointer,
+turns on a tap, floats on a slow loop and shows the visitor's local time with
+hour and minute hands; its caption names the detected timezone. A lime time rail
+tracks scroll progress, the nav marks the section in view, and sections reveal as
+they enter the viewport. Decorative motion is skipped under
+`prefers-reduced-motion`, while the time keeps updating.
 
 ## Make it yours
 
 - Brand: `.logo`, the lime token, `<title>` and the legal footer line.
-- Product: replace `assets/signal-hero.webp` with your own launch photograph. Keep the portrait crop and `object-fit` treatment for the hero.
+- Product: restyle the CSS watch case, bezel and dial in `.watch-case`, `.watch-bezel` and `.watch-dial`; replace the dial lettering in `.watch-sign` and `.watch-quartz`.
 - Specs: edit the `<dl class="spec-list">` rows; it is plain definition markup.
 - Preorder: replace the submit handler with a real endpoint, then test validation and the success state.
 
 ## Photography
 
 The site uses six locally hosted Pexels photographs, all free under the Pexels
-license. Source pages, photographers and crops are listed in
-[`ASSETS.md`](ASSETS.md). The product is fictional; the hero is reference
-photography, not a photograph of a real Signal Nine.
+license. They supply the dial detail, metal, night, desk, shelf and workshop
+images. Source pages, photographers and crops are listed in
+[`ASSETS.md`](ASSETS.md). The watch itself is built in CSS; the product is
+fictional.
 
 ## Limits
 

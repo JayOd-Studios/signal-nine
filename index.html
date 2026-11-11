@@ -37,26 +37,63 @@
 
 <main id="main">
   <section class="hero" id="top" aria-labelledby="heroTitle">
-    <div class="hero-copy">
-      <p class="eyebrow"><span class="live" aria-hidden="true"></span> The desk companion</p>
-      <h1 id="heroTitle">Time,<br>without<br><em>a screen.</em></h1>
-      <p class="lede">A machined brass dial, two hands, and nothing to check. Signal Nine keeps time quietly on your desk and asks nothing of you — no account, no app, no notifications.</p>
-      <div class="cta-row">
-        <a class="solid" href="#order">Preorder — $180</a>
-        <a class="quiet" href="#features">See how it works <span aria-hidden="true">↓</span></a>
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="live" aria-hidden="true"></span> The desk companion</p>
+        <h1 id="heroTitle">Time,<br>without<br><em>a screen.</em></h1>
+        <p class="lede">A machined brass dial, two hands, and nothing to check. Signal Nine keeps time quietly on your desk and asks nothing of you — no account, no app, no notifications.</p>
+        <div class="cta-row">
+          <a class="solid" href="#order">Preorder — $180</a>
+          <a class="quiet" href="#features">See how it works <span aria-hidden="true">↓</span></a>
+        </div>
+        <dl class="hero-stats">
+          <div><dt>Battery</dt><dd>72 hours</dd></div>
+          <div><dt>Body</dt><dd>380 g brass</dd></div>
+          <div><dt>Sync</dt><dd>Silent, passive</dd></div>
+        </dl>
       </div>
-      <dl class="hero-stats">
-        <div><dt>Battery</dt><dd>72 hours</dd></div>
-        <div><dt>Body</dt><dd>380 g brass</dd></div>
-        <div><dt>Sync</dt><dd>Silent, passive</dd></div>
-      </dl>
-    </div>
 
-    <figure class="hero-device">
-      <div class="device-glow" aria-hidden="true"></div>
-      <img class="device-photo" src="assets/signal-hero.webp" alt="A rectangular brass desk clock with a pale dial and slim black hands, standing on a stack of magazines." width="1200" height="1500" fetchpriority="high" decoding="async">
-      <figcaption class="device-note">Shown at 1:1 · brushed brass</figcaption>
-    </figure>
+      <div class="hero-visual">
+        <span class="watch-halo" aria-hidden="true"></span>
+        <p class="watch-coord" aria-hidden="true"><span>SN—09</span><span>Brass / local</span></p>
+        <div class="watch-stage" id="watchStage" aria-hidden="true">
+          <span class="watch-shadow"></span>
+          <span class="watch-float">
+            <span class="watch-tilt">
+              <span class="watch-spin">
+                <span class="watch-object">
+                  <span class="watch-case">
+                    <span class="watch-crown"></span>
+                    <span class="watch-bezel">
+                      <span class="watch-dial">
+                        <span class="watch-ticks"></span>
+                        <span class="watch-markers">
+                          <i style="--i:0"></i><i style="--i:1"></i><i style="--i:2"></i><i style="--i:3"></i>
+                          <i style="--i:4"></i><i style="--i:5"></i><i style="--i:6"></i><i style="--i:7"></i>
+                          <i style="--i:8"></i><i style="--i:9"></i><i style="--i:10"></i><i style="--i:11"></i>
+                        </span>
+                        <span class="watch-sign">Signal Nine</span>
+                        <span class="watch-quartz">Quartz · local</span>
+                        <span class="watch-hand hour" id="hourHand"></span>
+                        <span class="watch-hand minute" id="minuteHand"></span>
+                        <span class="watch-pin"></span>
+                      </span>
+                      <span class="watch-glass"></span>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </span>
+          </span>
+        </div>
+        <p class="watch-readout">
+          <span class="watch-zone"><span class="live" aria-hidden="true"></span> Your local time <span id="watchZone">—</span></span>
+          <span class="watch-time"><time id="watchClock" datetime="">--:--</time></span>
+          <span class="watch-hint" id="watchHint">Hover or tap to move</span>
+        </p>
+      </div>
+    </div>
   </section>
 
   <div class="press" aria-label="Press mentions">

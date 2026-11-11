@@ -1,5 +1,5 @@
 /* Signal Nine — sample launch page behaviour.
-   A real clock on the dial, a scroll-aware nav, a mobile menu and a sample form. */
+   A live local-time watch, a scroll-aware nav, a mobile menu and a sample form. */
 
 (function () {
   "use strict";
@@ -70,6 +70,60 @@
     });
   }
 
+  /* ---------- Local-time watch ---------- */
+
+  var watchZone = document.getElementById("watchZone");
+  var watchClock = document.getElementById("watchClock");
+  var watchHint = document.getElementById("watchHint");
+  var hourHand = document.getElementById("hourHand");
+  var minuteHand = document.getElementById("minuteHand");
+  var timeFormatter;
+  var zoneName = "Local";
+
+  try {
+    timeFormatter = new Intl.DateTimeFormat(undefined, {
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit"
+    });
+    zoneName = Intl.DateTimeFormat().resolvedOptions().timeZone || zoneName;
+  } catch (error) {
+    timeFormatter = null;
+  }
+
+  if (watchZone) watchZone.textContent = zoneName.replace(/_/g, " ");
+  if (watchHint && reduceMotion) watchHint.textContent = "Live local time";
+
+  function paintTime() {
+    var now = new Date();
+    var seconds = now.getSeconds() + now.getMilliseconds() / 1000;
+    var minutes = now.getMinutes() + seconds / 60;
+    var hours = (now.getHours() % 12) + minutes / 60;
+
+    if (hourHand) hourHand.style.setProperty("--rot", (hours * 30).toFixed(3) + "deg");
+    if (minuteHand) minuteHand.style.setProperty("--rot", (minutes * 6).toFixed(3) + "deg");
+
+    if (watchClock) {
+      var label = timeFormatter
+        ? timeFormatter.format(now)
+        : now.getHours().toString().padStart(2, "0") + ":" + now.getMinutes().toString().padStart(2, "0");
+      if (watchClock.textContent !== label) {
+        watchClock.textContent = label;
+        watchClock.setAttribute("datetime", now.toISOString());
+      }
+    }
+  }
+
+  if (reduceMotion) {
+    paintTime();
+    window.setInterval(paintTime, 1000);
+  } else {
+    (function tick() {
+      paintTime();
+      window.requestAnimationFrame(tick);
+    })();
+  }
+
   /* ---------- Motion layer ---------- */
 
   var motionReady = root.classList.contains("has-motion") && "IntersectionObserver" in window;
@@ -99,20 +153,38 @@
 
   if (motionReady) {
     var hero = document.querySelector(".hero");
-    var device = document.querySelector(".hero-device");
-    if (hero && device) {
+    var watchStage = document.getElementById("watchStage");
+    var watchTilt = document.querySelector(".watch-tilt");
+    var watchSpin = document.querySelector(".watch-spin");
+
+    if (hero && watchTilt) {
       hero.addEventListener("pointermove", function (event) {
         var rect = hero.getBoundingClientRect();
         var x = (event.clientX - rect.left) / rect.width - 0.5;
         var y = (event.clientY - rect.top) / rect.height - 0.5;
-        device.style.setProperty("--tilt-y", (x * 7).toFixed(2) + "deg");
-        device.style.setProperty("--tilt-x", (-y * 7).toFixed(2) + "deg");
+        watchTilt.style.setProperty("--tilt-y", (x * 30).toFixed(2) + "deg");
+        watchTilt.style.setProperty("--tilt-x", (-y * 24).toFixed(2) + "deg");
+        watchTilt.style.setProperty("--move-x", (x * 26).toFixed(1) + "px");
+        watchTilt.style.setProperty("--move-y", (y * 18).toFixed(1) + "px");
         hero.style.setProperty("--mx", ((x + 0.5) * 100).toFixed(1) + "%");
         hero.style.setProperty("--my", ((y + 0.5) * 100).toFixed(1) + "%");
       });
       hero.addEventListener("pointerleave", function () {
-        device.style.setProperty("--tilt-y", "0deg");
-        device.style.setProperty("--tilt-x", "0deg");
+        watchTilt.style.setProperty("--tilt-y", "0deg");
+        watchTilt.style.setProperty("--tilt-x", "0deg");
+        watchTilt.style.setProperty("--move-x", "0px");
+        watchTilt.style.setProperty("--move-y", "0px");
+      });
+    }
+
+    if (watchStage && watchSpin) {
+      watchStage.addEventListener("click", function () {
+        if (watchStage.classList.contains("is-spinning")) return;
+        watchStage.classList.add("is-spinning");
+        watchStage.addEventListener("animationend", function done() {
+          watchStage.classList.remove("is-spinning");
+          watchStage.removeEventListener("animationend", done);
+        });
       });
     }
 
