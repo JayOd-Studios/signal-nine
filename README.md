@@ -50,6 +50,14 @@ story, a CSS/SVG product render that behaves (the hands track real time), a spec
 table that is genuinely readable, motion with a reduced-motion off switch, and a
 form that does not pretend to take money.
 
+## Motion
+
+The motion layer is dependency-free. The dial's hands move on a
+`requestAnimationFrame` loop, the hero tilts toward the pointer, the feature
+plates animate on their own cycles, a lime time rail tracks scroll progress,
+the nav marks the section in view, and sections reveal as they enter the
+viewport. Everything is skipped under `prefers-reduced-motion`.
+
 ## Make it yours
 
 - Brand: `.logo`, the lime token, `<title>` and the legal footer line.
