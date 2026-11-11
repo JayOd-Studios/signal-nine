@@ -40,56 +40,6 @@
     });
   }
 
-  /* ---------- The dial shows the actual time ---------- */
-
-  var ticks = document.getElementById("ticks");
-  var hourTicks = document.getElementById("hourTicks");
-  var hourHand = document.getElementById("hourHand");
-  var minuteHand = document.getElementById("minuteHand");
-  var digital = document.getElementById("digital");
-  var NS = "http://www.w3.org/2000/svg";
-
-  function tick(cx, cy, r1, r2, angle) {
-    var rad = (angle - 90) * (Math.PI / 180);
-    var line = document.createElementNS(NS, "line");
-    line.setAttribute("x1", (cx + Math.cos(rad) * r1).toFixed(1));
-    line.setAttribute("y1", (cy + Math.sin(rad) * r1).toFixed(1));
-    line.setAttribute("x2", (cx + Math.cos(rad) * r2).toFixed(1));
-    line.setAttribute("y2", (cy + Math.sin(rad) * r2).toFixed(1));
-    return line;
-  }
-
-  if (ticks && hourTicks) {
-    for (var i = 0; i < 60; i += 1) {
-      if (i % 5 === 0) continue;
-      ticks.appendChild(tick(180, 196, 96, 102, i * 6));
-    }
-    for (var h = 0; h < 12; h += 1) {
-      hourTicks.appendChild(tick(180, 196, 92, 104, h * 30));
-    }
-  }
-
-  var lastMinute = -1;
-  function setHands() {
-    var now = new Date();
-    var minutes = now.getMinutes() + now.getSeconds() / 60;
-    var hours = (now.getHours() % 12) + minutes / 60;
-
-    if (minuteHand) minuteHand.setAttribute("transform", "rotate(" + (minutes * 6).toFixed(2) + " 180 196)");
-    if (hourHand) hourHand.setAttribute("transform", "rotate(" + (hours * 30).toFixed(2) + " 180 196)");
-
-    if (digital && now.getMinutes() !== lastMinute) {
-      lastMinute = now.getMinutes();
-      var hh = String(now.getHours()).padStart(2, "0");
-      var mm = String(now.getMinutes()).padStart(2, "0");
-      digital.textContent = hh + ":" + mm + " local";
-    }
-
-    window.requestAnimationFrame(setHands);
-  }
-
-  window.requestAnimationFrame(setHands);
-
   /* ---------- Sample form ---------- */
 
   var form = document.getElementById("orderForm");
